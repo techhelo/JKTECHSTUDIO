@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JK TECH STUDIO | Apps & Digital Solutions</title>
+
+    <meta
+        name="description"
+        content="JK TECH STUDIO creates useful Android applications, games, and digital solutions."
+    >
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" href="data:image/svg+xml,
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+    <rect width='100' height='100' rx='22' fill='%236366f1'/>
+    <text x='50' y='65' font-size='48' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>JK</text>
+    </svg>">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Inter, Arial, Helvetica, sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: auto;
+        }
+
+        /* NAVBAR */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        nav {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 21px;
+            font-weight: 800;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 900;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #475569;
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.25s;
+        }
+
+        .nav-links a:hover {
+            color: #6366f1;
+        }
+
+        .menu-btn {
+            display: none;
+            border: none;
+            background: #f1f5f9;
+            font-size: 22px;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 110px 0 90px;
+            text-align: center;
+            background:
+                radial-gradient(circle at top left, rgba(99,102,241,.14), transparent 35%),
+                radial-gradient(circle at bottom right, rgba(139,92,246,.12), transparent 35%);
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #eef2ff;
+            color: #4f46e5;
+            border: 1px solid #c7d2fe;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin: auto;
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: 1.05;
+            letter-spacing: -2px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #6366f1, #8b5cf6, #a855f7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 25px auto 35px;
+            color: #64748b;
+            font-size: 18px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 23px;
+            border-radius: 12px;
+            font-weight: 700;
+            transition: 0.25s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: #6366f1;
+            color: white;
+            box-shadow: 0 8px 25px rgba(99,102,241,.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: #4f46e5;
+        }
+
+        .btn-secondary {
+            background: white;
+            border: 1px solid #cbd5e1;
+            color: #334155;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            border-color: #6366f1;
+            color: #6366f1;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            color: #6366f1;
+            font-weight: 800;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin: 8px 0 10px;
+        }
+
+        .section-title p {
+            color: #64748b;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #64748b;
+            margin-bottom: 16px;
+        }
+
+        .feature-list {
+            display: grid;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .feature {
+            display: flex;
+            gap: 13px;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            min-width: 42px;
+            height: 42px;
+            background: #eef2ff;
+            color: #6366f1;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 19px;
+        }
+
+        .feature strong {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .feature p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .about-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 20px 50px rgba(15,23,42,.06);
+        }
+
+        .about-logo {
+            width: 90px;
+            height: 90px;
+            margin-bottom: 20px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 32px;
+            font-weight: 900;
+        }
+
+        /* APPS */
+
+        .apps {
+            background: white;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .app-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 25px;
+            transition: .3s;
+            background: #fff;
+        }
+
+        .app-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(15,23,42,.08);
+            border-color: #c7d2fe;
+        }
+
+        .app-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 17px;
+            background: #eef2ff;
+            color: #6366f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 18px;
+        }
+
+        .app-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .app-card p {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .coming {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 5px 10px;
+            border-radius: 20px;
+            background: #f1f5f9;
+            color: #64748b;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            padding: 50px 30px;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+            border: 1px solid #ddd6fe;
+        }
+
+        .contact-box h2 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .contact-box p {
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        .email {
+            font-weight: 700;
+            color: #4f46e5;
+            word-break: break-word;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 45px 0 25px;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #334155;
+        }
+
+        .footer-brand {
+            max-width: 350px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            padding-top: 22px;
+            text-align: center;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        /* ANIMATION */
+
+        .fade-up {
+            animation: fadeUp .8s ease both;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                width: 100%;
+                background: white;
+                border-bottom: 1px solid #e2e8f0;
+                padding: 20px;
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 80px 0 65px;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .app-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 31px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .about-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+
+            <a href="#home" class="logo">
+                <div class="logo-icon">JK</div>
+                <span>JK TECH STUDIO</span>
+            </a>
+
+            <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#about" onclick="closeMenu()">About</a></li>
+                <li><a href="#apps" onclick="closeMenu()">Apps</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+
+        </nav>
+    </div>
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="container fade-up">
+
+            <div class="badge">
+                🚀 Building Useful Digital Experiences
+            </div>
+
+            <h1>
+                Simple Ideas.
+                <span class="gradient-text">Powerful Apps.</span>
+            </h1>
+
+            <p>
+                JK TECH STUDIO creates useful Android applications,
+                games, and digital solutions designed to make everyday
+                tasks simpler and more enjoyable.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#apps" class="btn btn-primary">
+                    Explore Our Apps
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Contact Us
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <div class="section-title">
+                <span>About Us</span>
+                <h2>Welcome to JK TECH STUDIO</h2>
+                <p>
+                    We focus on creating practical and user-friendly
+                    digital products.
+                </p>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-text">
+
+                    <h3>Technology made simple.</h3>
+
+                    <p>
+                        JK TECH STUDIO is an independent technology studio
+                        focused on developing applications and digital
+                        experiences for users.
+                    </p>
+
+                    <p>
+                        Our goal is to build products that are simple to
+                        understand, easy to use, and useful in everyday life.
+                    </p>
+
+                    <div class="feature-list">
+
+                        <div class="feature">
+
+                            <div class="feature-icon">
+                                ✓
+                            </div>
+
+                            <div>
+                                <strong>User Focused</strong>
+                                <p>
+                                    We design products with simplicity
+                                    and usability in mind.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="feature">
+
+                            <div class="feature-icon">
+                                ⚡
+                            </div>
+
+                            <div>
+                                <strong>Simple Experiences</strong>
+                                <p>
+                                    Clean interfaces and straightforward
+                                    functionality.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="feature">
+
+                            <div class="feature-icon">
+                                🔒
+                            </div>
+
+                            <div>
+                                <strong>Responsible Development</strong>
+                                <p>
+                                    We aim to follow platform policies and
+                                    respect user privacy.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about-card">
+
+                    <div class="about-logo">
+                        JK
+                    </div>
+
+                    <h3>JK TECH STUDIO</h3>
+
+                    <p style="color:#64748b; margin-top:10px;">
+                        Independent app and digital product studio.
+                    </p>
+
+                    <p style="color:#64748b; margin-top:15px;">
+                        We develop Android apps, games, utilities,
+                        and other digital products.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- APPS -->
+
+    <section class="apps" id="apps">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Our Products</span>
+
+                <h2>Apps & Projects</h2>
+
+                <p>
+                    Explore applications and digital products
+                    developed by JK TECH STUDIO.
+                </p>
+
+            </div>
+
+
+            <div class="app-grid">
+
+                <div class="app-card">
+
+                    <div class="app-icon">
+                        📱
+                    </div>
+
+                    <h3>Our Android Apps</h3>
+
+                    <p>
+                        Useful Android applications designed
+                        for everyday users.
+                    </p>
+
+                    <span class="coming">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+
+                <div class="app-card">
+
+                    <div class="app-icon">
+                        🎮
+                    </div>
+
+                    <h3>Games</h3>
+
+                    <p>
+                        Simple and entertaining games created
+                        for mobile devices.
+                    </p>
+
+                    <span class="coming">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+
+                <div class="app-card">
+
+                    <div class="app-icon">
+                        🛠️
+                    </div>
+
+                    <h3>Useful Tools</h3>
+
+                    <p>
+                        Practical digital tools designed to
+                        solve everyday problems.
+                    </p>
+
+                    <span class="coming">
+                        Coming Soon
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="contact-box">
+
+                <h2>Get in Touch</h2>
+
+                <p>
+                    For questions, feedback, support, or business
+                    enquiries, contact JK TECH STUDIO.
+                </p>
+
+                <!-- CHANGE THIS EMAIL -->
+
+                <a
+                    class="email"
+                    href="mailto:support.jktechdevelopers@gmail.com"
+                >
+                    support.jktechdevelopers@gmail.com
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-top">
+
+            <div class="footer-brand">
+
+                <h3>JK TECH STUDIO</h3>
+
+                <p>
+                    Building useful apps, games and digital
+                    experiences.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="privacy-policy.html">
+                    Privacy Policy
+                </a>
+
+                <a href="terms.html">
+                    Terms & Conditions
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+            © <span id="year"></span> JK TECH STUDIO. All rights reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    function toggleMenu() {
+        document
+            .getElementById("navLinks")
+            .classList.toggle("active");
+    }
+
+    function closeMenu() {
+        document
+            .getElementById("navLinks")
+            .classList.remove("active");
+    }
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
