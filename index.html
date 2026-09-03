@@ -291,7 +291,7 @@
             font-weight: 900;
         }
 
-        /* APPS */
+        /* APPS SECTION */
         .apps {
             background: white;
         }
@@ -299,18 +299,20 @@
         .app-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
+            gap: 24px;
         }
 
         .app-card {
             border: 1px solid #e2e8f0;
-            border-radius: 20px;
+            border-radius: 22px;
             padding: 26px;
-            transition: .3s;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             background: #fff;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
+            overflow: hidden;
         }
 
         .app-card:hover {
@@ -319,22 +321,42 @@
             border-color: #c7d2fe;
         }
 
-        .app-card.featured {
+        /* ATS Interactive Card */
+        .app-card.featured-interactive {
+            cursor: pointer;
             border-color: #c7d2fe;
             background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
             box-shadow: 0 10px 30px rgba(99,102,241,.06);
+            text-decoration: none;
+            color: inherit;
         }
 
-        /* App Icon Image & Container */
+        .app-card.featured-interactive:hover {
+            border-color: #6366f1;
+            box-shadow: 0 24px 50px rgba(99,102,241,.2);
+            transform: translateY(-8px);
+        }
+
+        .app-icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+
         .app-icon-img {
-            width: 70px;
-            height: 70px;
+            width: 72px;
+            height: 72px;
             border-radius: 18px;
             object-fit: cover;
-            margin-bottom: 18px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
             border: 1px solid #e2e8f0;
             background: #fff;
+            transition: transform 0.35s ease;
+        }
+
+        .app-card.featured-interactive:hover .app-icon-img {
+            transform: scale(1.06);
         }
 
         .app-icon {
@@ -353,35 +375,80 @@
         .app-card h3 {
             margin-bottom: 8px;
             font-size: 20px;
+            font-weight: 700;
         }
 
         .app-card p {
             color: #64748b;
             font-size: 14px;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
-        .badge-active {
-            display: inline-block;
-            font-size: 12px;
+        .featured-tag {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: #e0e7ff;
+            color: #4338ca;
+        }
+
+        /* HOVER TO REVEAL DOWNLOAD BUTTON */
+        .download-action-container {
+            margin-top: auto;
+            padding-top: 10px;
+        }
+
+        .download-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 12px 18px;
+            border-radius: 12px;
+            background: #0f172a;
+            color: #ffffff;
+            font-size: 14px;
             font-weight: 700;
-            padding: 5px 12px;
-            border-radius: 20px;
-            background: #dcfce7;
-            color: #15803d;
-            border: 1px solid #bbf7d0;
-            width: fit-content;
+            box-shadow: 0 6px 15px rgba(15,23,42,.15);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(4px);
+            opacity: 0.92;
+        }
+
+        .download-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            transition: transform 0.25s ease;
+        }
+
+        /* When card is pointed / hovered */
+        .app-card.featured-interactive:hover .download-btn {
+            background: #4f46e5;
+            color: #ffffff;
+            transform: translateY(0);
+            opacity: 1;
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+        }
+
+        .app-card.featured-interactive:hover .download-btn svg {
+            transform: translateY(-2px);
         }
 
         .coming {
             display: inline-block;
             font-size: 12px;
             font-weight: 700;
-            padding: 5px 10px;
+            padding: 6px 12px;
             border-radius: 20px;
             background: #f1f5f9;
             color: #64748b;
             width: fit-content;
+            margin-top: auto;
         }
 
         /* CONTACT */
@@ -681,15 +748,23 @@
             </div>
 
             <div class="app-grid">
-                <!-- ATS RESUME BUILDER -->
-                <div class="app-card featured">
+                <!-- ATS RESUME BUILDER (HOVER TO DOWNLOAD ON PLAY STORE) -->
+                <a 
+                    href="https://play.google.com/store/apps/details?id=com.jktechstudio.atsresumebuilder" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="app-card featured-interactive"
+                >
                     <div>
-                        <!-- Your Resume Builder Logo -->
-                        <img 
-                            src="resume-builder-icon.webp" 
-                            alt="ATS Resume Builder Logo" 
-                            class="app-icon-img"
-                        >
+                        <div class="app-icon-wrapper">
+                            <!-- Your Resume Builder Logo -->
+                            <img 
+                                src="resume-builder-icon.webp" 
+                                alt="ATS Resume Builder Logo" 
+                                class="app-icon-img"
+                            >
+                            <span class="featured-tag">★ Featured</span>
+                        </div>
 
                         <h3>ATS Resume Builder</h3>
 
@@ -698,10 +773,19 @@
                         </p>
                     </div>
 
-                    <span class="badge-active">
-                        ✦ Featured App
-                    </span>
-                </div>
+                    <!-- Interactive Download Button shown on Point / Hover -->
+                    <div class="download-action-container">
+                        <div class="download-btn">
+                            <!-- Download / Play Store Icon -->
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Download on Google Play
+                        </div>
+                    </div>
+                </a>
 
                 <!-- GAMES -->
                 <div class="app-card">
