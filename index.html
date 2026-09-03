@@ -2,23 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>JK TECH STUDIO | Apps & Digital Solutions</title>
-
-    <meta
-        name="description"
-        content="JK TECH STUDIO creates useful Android applications, games, and digital solutions."
-    >
-
+    <meta name="description" content="JK TECH STUDIO creates useful Android applications, games, and digital solutions.">
     <meta name="robots" content="index, follow">
 
-    <link rel="icon" href="data:image/svg+xml,
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
-    <rect width='100' height='100' rx='22' fill='%236366f1'/>
-    <text x='50' y='65' font-size='48' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>JK</text>
-    </svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236366f1'/><text x='50' y='65' font-size='48' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>JK</text></svg>">
 
     <style>
         * {
@@ -49,7 +38,6 @@
         }
 
         /* NAVBAR */
-
         header {
             position: sticky;
             top: 0;
@@ -116,7 +104,6 @@
         }
 
         /* HERO */
-
         .hero {
             padding: 110px 0 90px;
             text-align: center;
@@ -202,7 +189,6 @@
         }
 
         /* SECTIONS */
-
         section {
             padding: 90px 0;
         }
@@ -232,7 +218,6 @@
         }
 
         /* ABOUT */
-
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -307,7 +292,6 @@
         }
 
         /* APPS */
-
         .apps {
             background: white;
         }
@@ -321,15 +305,36 @@
         .app-card {
             border: 1px solid #e2e8f0;
             border-radius: 20px;
-            padding: 25px;
+            padding: 26px;
             transition: .3s;
             background: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .app-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 20px 40px rgba(15,23,42,.08);
             border-color: #c7d2fe;
+        }
+
+        .app-card.featured {
+            border-color: #c7d2fe;
+            background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+            box-shadow: 0 10px 30px rgba(99,102,241,.06);
+        }
+
+        /* App Icon Image & Container */
+        .app-icon-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 18px;
+            object-fit: cover;
+            margin-bottom: 18px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2e8f0;
+            background: #fff;
         }
 
         .app-icon {
@@ -347,12 +352,25 @@
 
         .app-card h3 {
             margin-bottom: 8px;
+            font-size: 20px;
         }
 
         .app-card p {
             color: #64748b;
             font-size: 14px;
             margin-bottom: 18px;
+        }
+
+        .badge-active {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 20px;
+            background: #dcfce7;
+            color: #15803d;
+            border: 1px solid #bbf7d0;
+            width: fit-content;
         }
 
         .coming {
@@ -363,10 +381,10 @@
             border-radius: 20px;
             background: #f1f5f9;
             color: #64748b;
+            width: fit-content;
         }
 
         /* CONTACT */
-
         .contact-box {
             max-width: 800px;
             margin: auto;
@@ -394,7 +412,6 @@
         }
 
         /* FOOTER */
-
         footer {
             background: #0f172a;
             color: #cbd5e1;
@@ -447,7 +464,6 @@
         }
 
         /* ANIMATION */
-
         .fade-up {
             animation: fadeUp .8s ease both;
         }
@@ -457,7 +473,6 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -465,9 +480,7 @@
         }
 
         /* MOBILE */
-
         @media (max-width: 800px) {
-
             .nav-links {
                 display: none;
                 position: absolute;
@@ -515,7 +528,6 @@
         }
 
         @media (max-width: 480px) {
-
             .hero p {
                 font-size: 16px;
             }
@@ -540,7 +552,6 @@
 <header>
     <div class="container">
         <nav>
-
             <a href="#home" class="logo">
                 <div class="logo-icon">JK</div>
                 <span>JK TECH STUDIO</span>
@@ -556,20 +567,14 @@
                 <li><a href="#apps" onclick="closeMenu()">Apps</a></li>
                 <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
             </ul>
-
         </nav>
     </div>
 </header>
 
-
 <main>
-
     <!-- HERO -->
-
     <section class="hero" id="home">
-
         <div class="container fade-up">
-
             <div class="badge">
                 🚀 Building Useful Digital Experiences
             </div>
@@ -586,28 +591,19 @@
             </p>
 
             <div class="buttons">
-
                 <a href="#apps" class="btn btn-primary">
                     Explore Our Apps
                 </a>
-
                 <a href="#contact" class="btn btn-secondary">
                     Contact Us
                 </a>
-
             </div>
-
         </div>
-
     </section>
 
-
     <!-- ABOUT -->
-
     <section id="about">
-
         <div class="container">
-
             <div class="section-title">
                 <span>About Us</span>
                 <h2>Welcome to JK TECH STUDIO</h2>
@@ -618,291 +614,191 @@
             </div>
 
             <div class="about-grid">
-
                 <div class="about-text">
-
                     <h3>Technology made simple.</h3>
-
                     <p>
                         JK TECH STUDIO is an independent technology studio
                         focused on developing applications and digital
                         experiences for users.
                     </p>
-
                     <p>
                         Our goal is to build products that are simple to
                         understand, easy to use, and useful in everyday life.
                     </p>
 
                     <div class="feature-list">
-
                         <div class="feature">
-
-                            <div class="feature-icon">
-                                ✓
-                            </div>
-
+                            <div class="feature-icon">✓</div>
                             <div>
                                 <strong>User Focused</strong>
-                                <p>
-                                    We design products with simplicity
-                                    and usability in mind.
-                                </p>
+                                <p>We design products with simplicity and usability in mind.</p>
                             </div>
-
                         </div>
 
-
                         <div class="feature">
-
-                            <div class="feature-icon">
-                                ⚡
-                            </div>
-
+                            <div class="feature-icon">⚡</div>
                             <div>
                                 <strong>Simple Experiences</strong>
-                                <p>
-                                    Clean interfaces and straightforward
-                                    functionality.
-                                </p>
+                                <p>Clean interfaces and straightforward functionality.</p>
                             </div>
-
                         </div>
-
 
                         <div class="feature">
-
-                            <div class="feature-icon">
-                                🔒
-                            </div>
-
+                            <div class="feature-icon">🔒</div>
                             <div>
                                 <strong>Responsible Development</strong>
-                                <p>
-                                    We aim to follow platform policies and
-                                    respect user privacy.
-                                </p>
+                                <p>We aim to follow platform policies and respect user privacy.</p>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
-
                 <div class="about-card">
-
-                    <div class="about-logo">
-                        JK
-                    </div>
-
+                    <div class="about-logo">JK</div>
                     <h3>JK TECH STUDIO</h3>
-
                     <p style="color:#64748b; margin-top:10px;">
                         Independent app and digital product studio.
                     </p>
-
                     <p style="color:#64748b; margin-top:15px;">
                         We develop Android apps, games, utilities,
                         and other digital products.
                     </p>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
-
     <!-- APPS -->
-
     <section class="apps" id="apps">
-
         <div class="container">
-
             <div class="section-title">
-
                 <span>Our Products</span>
-
                 <h2>Apps & Projects</h2>
-
                 <p>
                     Explore applications and digital products
                     developed by JK TECH STUDIO.
                 </p>
-
             </div>
-
 
             <div class="app-grid">
+                <!-- ATS RESUME BUILDER -->
+                <div class="app-card featured">
+                    <div>
+                        <!-- Your Resume Builder Logo -->
+                        <img 
+                            src="resume-builder-icon.webp" 
+                            alt="ATS Resume Builder Logo" 
+                            class="app-icon-img"
+                        >
 
-                <div class="app-card">
+                        <h3>ATS Resume Builder</h3>
 
-                    <div class="app-icon">
-                        📱
+                        <p>
+                            Build ATS-compliant, professional resumes & CVs with modern templates designed to pass automated recruiter screening.
+                        </p>
                     </div>
 
-                    <h3>Our Android Apps</h3>
+                    <span class="badge-active">
+                        ✦ Featured App
+                    </span>
+                </div>
 
-                    <p>
-                        Useful Android applications designed
-                        for everyday users.
-                    </p>
+                <!-- GAMES -->
+                <div class="app-card">
+                    <div>
+                        <div class="app-icon">
+                            🎮
+                        </div>
+
+                        <h3>Games</h3>
+
+                        <p>
+                            Simple and entertaining games created
+                            for mobile devices.
+                        </p>
+                    </div>
 
                     <span class="coming">
                         Coming Soon
                     </span>
-
                 </div>
 
-
+                <!-- TOOLS & UTILITIES -->
                 <div class="app-card">
+                    <div>
+                        <div class="app-icon">
+                            🛠️
+                        </div>
 
-                    <div class="app-icon">
-                        🎮
+                        <h3>Useful Tools</h3>
+
+                        <p>
+                            Practical digital utilities designed to
+                            solve everyday productivity challenges.
+                        </p>
                     </div>
-
-                    <h3>Games</h3>
-
-                    <p>
-                        Simple and entertaining games created
-                        for mobile devices.
-                    </p>
 
                     <span class="coming">
                         Coming Soon
                     </span>
-
                 </div>
-
-
-                <div class="app-card">
-
-                    <div class="app-icon">
-                        🛠️
-                    </div>
-
-                    <h3>Useful Tools</h3>
-
-                    <p>
-                        Practical digital tools designed to
-                        solve everyday problems.
-                    </p>
-
-                    <span class="coming">
-                        Coming Soon
-                    </span>
-
-                </div>
-
             </div>
-
         </div>
-
     </section>
 
-
     <!-- CONTACT -->
-
     <section id="contact">
-
         <div class="container">
-
             <div class="contact-box">
-
                 <h2>Get in Touch</h2>
-
                 <p>
                     For questions, feedback, support, or business
                     enquiries, contact JK TECH STUDIO.
                 </p>
 
-                <!-- CHANGE THIS EMAIL -->
-
-                <a
-                    class="email"
-                    href="mailto:support.jktechdevelopers@gmail.com"
-                >
+                <a class="email" href="mailto:support.jktechdevelopers@gmail.com">
                     support.jktechdevelopers@gmail.com
                 </a>
-
             </div>
-
         </div>
-
     </section>
-
 </main>
 
-
 <!-- FOOTER -->
-
 <footer>
-
     <div class="container">
-
         <div class="footer-top">
-
             <div class="footer-brand">
-
                 <h3>JK TECH STUDIO</h3>
-
                 <p>
                     Building useful apps, games and digital
                     experiences.
                 </p>
-
             </div>
-
 
             <div class="footer-links">
-
-                <a href="privacy-policy.html">
-                    Privacy Policy
-                </a>
-
-                <a href="terms.html">
-                    Terms & Conditions
-                </a>
-
-                <a href="#contact">
-                    Contact
-                </a>
-
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="#contact">Contact</a>
             </div>
-
         </div>
-
 
         <div class="copyright">
             © <span id="year"></span> JK TECH STUDIO. All rights reserved.
         </div>
-
     </div>
-
 </footer>
 
-
 <script>
-
     function toggleMenu() {
-        document
-            .getElementById("navLinks")
-            .classList.toggle("active");
+        document.getElementById("navLinks").classList.toggle("active");
     }
 
     function closeMenu() {
-        document
-            .getElementById("navLinks")
-            .classList.remove("active");
+        document.getElementById("navLinks").classList.remove("active");
     }
 
-    document.getElementById("year").textContent =
-        new Date().getFullYear();
-
+    document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
