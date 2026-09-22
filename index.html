@@ -546,7 +546,192 @@
             }
         }
 
+
+        @media (min-width: 801px) {
+            .app-card.featured-interactive {
+                min-height: 300px;
+            }
+        }
+
+
+        /* FEATURED APPS - HOMEPAGE */
+        .featured-apps {
+            padding: 35px 0 85px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .featured-apps-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .featured-apps-heading span {
+            color: #6366f1;
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .featured-apps-heading h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            margin: 6px 0 7px;
+            letter-spacing: -1px;
+        }
+
+        .featured-apps-heading p {
+            color: #64748b;
+            font-size: 15px;
+        }
+
+        .featured-apps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .featured-app-showcase {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            padding: 25px;
+            min-height: 190px;
+            border-radius: 26px;
+            text-decoration: none;
+            color: #0f172a;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
+            box-shadow: 0 18px 45px rgba(15,23,42,.08);
+            transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+        }
+
+        .featured-app-showcase::after {
+            content: "OPEN →";
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            color: #64748b;
+            opacity: .8;
+        }
+
+        .featured-app-showcase:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 25px 55px rgba(15,23,42,.14);
+            border-color: #c7d2fe;
+        }
+
+        .qwikbill-showcase {
+            background:
+                radial-gradient(circle at 90% 10%, rgba(255,165,0,.18), transparent 35%),
+                linear-gradient(135deg, #fff7ed, #ffffff 65%);
+        }
+
+        .resume-showcase {
+            background:
+                radial-gradient(circle at 90% 10%, rgba(99,102,241,.14), transparent 35%),
+                linear-gradient(135deg, #eef2ff, #ffffff 65%);
+        }
+
+        .showcase-logo {
+            flex: 0 0 105px;
+            width: 105px;
+            height: 105px;
+            border-radius: 25px;
+            overflow: hidden;
+            background: #ffffff;
+            box-shadow: 0 12px 25px rgba(15,23,42,.12);
+        }
+
+        .showcase-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .showcase-content {
+            padding-right: 35px;
+        }
+
+        .showcase-badge {
+            display: inline-block;
+            padding: 5px 9px;
+            border-radius: 999px;
+            background: rgba(99,102,241,.10);
+            color: #4f46e5;
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: .7px;
+            margin-bottom: 7px;
+        }
+
+        .qwikbill-showcase .showcase-badge {
+            background: rgba(249,115,22,.12);
+            color: #ea580c;
+        }
+
+        .showcase-content h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .showcase-content p {
+            color: #64748b;
+            font-size: 13px;
+            line-height: 1.55;
+            margin-bottom: 12px;
+        }
+
+        .showcase-link {
+            font-size: 13px;
+            font-weight: 800;
+            color: #4f46e5;
+        }
+
+        .qwikbill-showcase .showcase-link {
+            color: #ea580c;
+        }
+
         /* MOBILE */
+
+        @media (max-width: 800px) {
+            .featured-apps {
+                padding: 20px 0 60px;
+            }
+
+            .featured-apps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-app-showcase {
+                padding: 20px;
+                gap: 17px;
+                min-height: 165px;
+            }
+
+            .showcase-logo {
+                flex-basis: 82px;
+                width: 82px;
+                height: 82px;
+                border-radius: 20px;
+            }
+
+            .showcase-content h3 {
+                font-size: 20px;
+            }
+
+            .showcase-content p {
+                font-size: 12px;
+            }
+        }
+
         @media (max-width: 800px) {
             .nav-links {
                 display: none;
@@ -668,6 +853,54 @@
         </div>
     </section>
 
+
+    <!-- FEATURED APPS -->
+    <section class="featured-apps" aria-label="Featured Apps">
+        <div class="container">
+            <div class="featured-apps-heading">
+                <span>Featured Apps</span>
+                <h2>Our Apps, Ready to Explore</h2>
+                <p>Discover our two featured Android apps from JK TECH STUDIO.</p>
+            </div>
+
+            <div class="featured-apps-grid">
+                <a
+                    href="https://play.google.com/store/apps/details?id=com.jktechstudio.qwikbill"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="featured-app-showcase qwikbill-showcase"
+                >
+                    <div class="showcase-logo">
+                        <img src="qwikbill-logo.png" alt="QwikBill - POS">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-badge">⚡ POS & BILLING</span>
+                        <h3>QwikBill - POS</h3>
+                        <p>Scan products, create bills, generate digital invoices, and manage your products quickly.</p>
+                        <span class="showcase-link">Get it on Google Play →</span>
+                    </div>
+                </a>
+
+                <a
+                    href="https://play.google.com/store/apps/details?id=com.jktechstudio.atsresumebuilder"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="featured-app-showcase resume-showcase"
+                >
+                    <div class="showcase-logo">
+                        <img src="resume-builder-icon.webp" alt="ATS Resume Builder">
+                    </div>
+                    <div class="showcase-content">
+                        <span class="showcase-badge">★ RESUME BUILDER</span>
+                        <h3>ATS Resume Builder</h3>
+                        <p>Create professional ATS-friendly resumes and CVs with modern templates for job applications.</p>
+                        <span class="showcase-link">Get it on Google Play →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- ABOUT -->
     <section id="about">
         <div class="container">
@@ -778,6 +1011,47 @@
                         <div class="download-btn">
                             <!-- Download / Play Store Icon -->
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Download on Google Play
+                        </div>
+                    </div>
+                </a>
+
+
+                <!-- QWIKBILL (GOOGLE PLAY) -->
+                <a
+                    href="https://play.google.com/store/apps/details?id=com.jktechstudio.qwikbill"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="app-card featured-interactive"
+                >
+                    <div>
+                        <div class="app-icon-wrapper">
+                            <img
+                                src="qwikbill-logo.png"
+                                alt="QwikBill - POS Logo"
+                                class="app-icon-img"
+                            >
+                            <span class="featured-tag">⚡ POS</span>
+                        </div>
+
+                        <h3>QwikBill - POS</h3>
+
+                        <p>
+                            Fast and simple POS billing with barcode scanning,
+                            digital invoices, product management, PDF bills,
+                            and easy bill sharing.
+                        </p>
+                    </div>
+
+                    <div class="download-action-container">
+                        <div class="download-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2.5" stroke-linecap="round"
+                                 stroke-linejoin="round">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                 <polyline points="7 10 12 15 17 10"></polyline>
                                 <line x1="12" y1="15" x2="12" y2="3"></line>
